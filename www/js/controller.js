@@ -3,7 +3,7 @@ angular.module('starter')
 .controller('ImageController', function($scope, $cordovaDevice, $cordovaFile, $ionicPlatform, $ionicActionSheet, ImageService, FileService) {
 
 	$ionicPlatform.ready(function() {
-		$scope.images = FileService.images();
+		$scope.images = FileService.image();
 		$scope.$apply();
 	});
 
@@ -13,7 +13,7 @@ angular.module('starter')
 
 	$scope.addMedia = function() {
 		$scope.hideSheet = $ionicActionSheet.show({
-			button: [
+			buttons: [
 				{text: 'Take Photo'},
 				{text: 'Photo from library'}
 			],
@@ -21,6 +21,7 @@ angular.module('starter')
 			cancelText: 'Cancel',
 			buttonClicked: function(index) {
 				$scope.addImage(index);
+				//console.log($scope.addImage(index));
 			}
 		});
 	};

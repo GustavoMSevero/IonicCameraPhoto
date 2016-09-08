@@ -47,7 +47,7 @@ angular.module('starter')
 				source = Camera.PictureSourceType.PHOTOLIBRARY;
 				break;
 		} return {
-			destinationType: Camera.destinationType.FILE_URI,
+			destinationType: Camera.DestinationType.FILE_URI,
 			sourceType: source,
 			allowEdit: false,
 			encodingType: Camera.EncodingType.JPEG,
